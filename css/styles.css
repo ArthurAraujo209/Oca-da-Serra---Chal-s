@@ -9,7 +9,9 @@
         --glass: rgba(255, 255, 255, 0.7);
         --shadow: 0 18px 40px rgba(8, 20, 24, 0.06);
     }
+
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Poppins&display=swap');
+
     * {
         box-sizing: border-box
     }
@@ -33,15 +35,15 @@
         margin: 0 auto
     }
 
-   header {
-    padding: 18px 0;
-    position: sticky;
-    top: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0));
-    backdrop-filter: blur(1px);
-    z-index: 40;
-    height: 200px;
-}
+    header {
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+        backdrop-filter: blur(1px);
+        z-index: 40;
+        height: 200px;
+    }
 
 
     .top {
@@ -58,14 +60,17 @@
     }
 
     .logo {
+        min-width: 64px;
+        min-height: 64px;
         width: 64px;
         height: 64px;
         border-radius: 14px;
         overflow: hidden;
         box-shadow: var(--shadow);
-        background-image: url('../img/logo-boa.jpg');
+        background-image: url('../img/Logo.jpg');
         background-repeat: no-repeat;
         background-size: 100%;
+
     }
 
     .brand h1 {
@@ -92,16 +97,17 @@
         margin-top: 10%;
         background: var(--chip);
         color: #fff;
-        font-weight: 600;
         text-decoration: none;
         cursor: pointer;
         border: none;
-        transition: all 0.5s ease;
+        transition: all 0.3s cubic-bezier(0.95, 0.02, 0, 0.99);
         padding: 10px 18px;
         border-radius: 10px;
-        font-weight: 600;
         width: 100%;
         height: 50px;
+    }
+    .btn-more{
+        font-size: 17px;
     }
 
     .btn:hover {
@@ -113,28 +119,58 @@
     .btn.wh {
         background: #1fae5b
     }
-    .btn.wh:hover{
+
+    .btn.wh:hover {
         background-color: #1a8d4a;
     }
 
-    .sem-margem{
+    .btn.reservar {
+        background: #1fae5b;
+        margin-top: 10px;
+    }
+
+    .btn.reservar:hover {
+        background: #1a8d4a;
+    }
+
+    .card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease;
+    }
+
+    .card.show-left {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .card.show-right {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+    .sem-margem {
         margin: 0px;
     }
-    
+
 
     .hero {
         align-items: center;
         margin: 22px 0;
         width: 100%;
     }
-    
+
     .hero-card {
         position: relative;
         background: var(--card);
         padding: 22px;
         border-radius: 20px;
         box-shadow: var(--shadow);
-        background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,0.5)), url("../img/Vista da serra.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5)), url("../img/Paisagem.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         padding-bottom: 200px;
         overflow: hidden;
 
@@ -155,7 +191,7 @@
         position: relative;
     }
 
-    .escuro{
+    .escuro {
         position: absolute;
         inset: 0;
         z-index: 1;
@@ -258,9 +294,10 @@
         transition: all 0.1s ease-in;
     }
 
-    .thumb:hover{
+    .thumb:hover {
         margin-top: -10px;
     }
+
     .thumb img {
         width: 100%;
     }
@@ -330,11 +367,13 @@
         .hero {
             grid-template-columns: 1fr;
         }
-        .hero-card{
+
+        .hero-card {
             padding-bottom: 10px;
             background-position: center top;
             background-repeat: no-repeat;
         }
+
         .grid {
             grid-template-columns: 1fr
         }
